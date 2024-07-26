@@ -18,7 +18,9 @@
         <input type="email" id="email" name="email" required><br>
         <label for="message">Message:</label><br>
         <textarea id="message" name="message" rows="4" required></textarea><br>
-        <div class="h-captcha" data-sitekey="NONE"></div><br>
+        <!-- ADD HCAPTCHA SITE KEY HERE -->
+        <div class="h-captcha" data-sitekey=""></div><br>
+        <!-- ADD HCAPTCHA SITE KEY HERE -->
         {% with messages = get_flashed_messages() %}
         {% if messages %}
             <ul class="flashes">
