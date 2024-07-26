@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elite Media | Upload</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='img/elite-media.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Your Media</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data" onsubmit="return validateFile()">
+            <div class="form-group">
+                <label for="fileInput">Choose a file:</label>
+                <input type="file" name="file" id="fileInput">
+            </div>
+            {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+            <button type="submit" class="btn-submit">Upload</button>
+        </form>
+        <a href="{{ url_for('home') }}" class="btn-home">Go Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elite Media</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="website icon" href="{{ url_for('static', filename='img/elite-media.png') }}">
+</head>
+<body>
+<header>
+    <h1>Elite Media</h1>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="/home">Watch Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" class="hero">
+        <div class="content">
+            <h2>Welcome to Elite Media</h2>
+            <p>A social media platform for connecting and sharing content made with python, flask, html, css, js, docker.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="content">
+            <h2>About Elite Media</h2>
+            <p>Learn more about our mission and values.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="content">
+            <h2>Features</h2>
+            <ul>
+                <li>Content Viewing And Posting</li>
+                <li>Contact Us Form</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content">
+            <h2>Contact Us</h2>
+            <a href="/contact-us">Contact Us</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Elite Media. All rights reserved.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elite Media | View</title>
+    <link rel="icon" href="{{ url_for('static', filename='elite-media.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/view.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% for file in files %}
+        <div class="media-item">
+            {% if file.endswith('.mp4') %}
+            <video class="media" autoplay controls>
+                <source src="{{ url_for('uploaded_file', filename=file) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% elif file.endswith('.jpg') or file.endswith('.png') %}
+            <img src="{{ url_for('uploaded_file', filename=file) }}" alt="{{ file }}">
+            {% elif file.endswith('.gif') %}
+            <img src="{{ url_for('uploaded_file', filename=file) }}" alt="{{ file }}">
+            {% else %}
+            <a href="{{ url_for('uploaded_file', filename=file) }}">{{ file }}</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="scroll-prompt" class="prompt">
+        Scroll to see more
+        <button id="dismiss-prompt">Got it!</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/view.js') }}"></script>
+</body>
+</html>
