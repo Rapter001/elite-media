@@ -11,7 +11,9 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(__file__), 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'svg', 'gif', 'mp4', 'webp', 'ogg', 'webm', 'bmp'}
-app.secret_key = "NONE"
+# ADD YOUR SECRET KEY HERE
+app.secret_key = ""
+# ADD YOUR SECRET KEY HERE
 
 # Ensure the upload directory exists
 if not os.path.exists(app.config['UPLOAD_FOLDER']):
@@ -103,7 +105,9 @@ def view_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 # hCaptcha secret key for verifying the captcha response
-hcaptcha_secret_key = "NONE"
+# ADD YOUR HCAPTCHA SECRET KEY HERE
+hcaptcha_secret_key = ""
+# ADD YOUR HCAPTCHA SECRET KEY HERE
 
 @app.route('/contact-us', methods=['GET', 'POST'])
 def contact_us():
@@ -132,9 +136,11 @@ def contact_us():
         result = verify_response.json()
 
         if result['success']:
-            sender_email = "NONE"
-            sender_password = "NONE"
-            receiver_email = "NONE"
+            # ADD YOUR EMAIL DATA HERE
+            sender_email = ""
+            sender_password = ""
+            receiver_email = ""
+            # ADD YOUR EMAIL DATA HERE
 
             # Create email message
             msg = MIMEMultipart()
